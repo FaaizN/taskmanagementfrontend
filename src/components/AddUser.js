@@ -11,7 +11,7 @@ export default function AddUser() {
       e.preventDefault()
       const user = {userName}
       console.log(user)
-      fetch("https://taskmanagement-frontend-3a6eb1b64aa2.herokuapp.com/user/register", {//http://localhost:8080/user/register", {
+      fetch("https://taskmanagement-backend-1feb3ee707f7.herokuapp.com/user/register", {//http://localhost:8080/user/register", {
         method: "POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify(user)
