@@ -14,7 +14,7 @@ export default function LoginUser({setUserName}) {
     const handleClick = async (e) => {
       e.preventDefault()
       try {
-          const response = await fetch(`http://localhost:8080/data/check/${user_Name}`, {
+          const response = await fetch(`https://taskmanagement-frontend-3a6eb1b64aa2.herokuapp.com/data/check/${user_Name}`, { //`http://localhost:8080/data/check/${user_Name}`, {
               method: "GET",
               headers: { "Content-Type": "application/json" },
           });
@@ -33,7 +33,7 @@ export default function LoginUser({setUserName}) {
     }  
 
   React.useEffect(()=>{
-    fetch("http://localhost:8080/data/users")
+    fetch("https://taskmanagement-frontend-3a6eb1b64aa2.herokuapp.com/data/users")//http://localhost:8080/data/users")
       .then(response => response.json())
       .then(data => {
         console.log(data);

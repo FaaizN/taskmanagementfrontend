@@ -16,7 +16,7 @@ export default function Tasks({userName}) {
     
     
     React.useEffect(() => {
-        fetch(`http://localhost:8080/data/tasks?userName=${userName}`)
+        fetch(`https://taskmanagement-frontend-3a6eb1b64aa2.herokuapp.com/data/tasks?userName=${userName}`)//`http://localhost:8080/data/tasks?userName=${userName}`)
         .then(res => res.json())
         .then(data => {
             // Assuming the API response is an array of task objects
@@ -51,7 +51,7 @@ export default function Tasks({userName}) {
 
         console.log(JSON.stringify(newTask))
     
-        fetch(`http://localhost:8080/task/add?userName=${userName}`, {
+        fetch(`https://taskmanagement-frontend-3a6eb1b64aa2.herokuapp.com/task/add?userName=${userName}`, { //`http://localhost:8080/task/add?userName=${userName}`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newTask)
