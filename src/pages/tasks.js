@@ -64,7 +64,10 @@ export default function Tasks({userName}) {
             }
         })
         .then(data => {
-            setTasks([...tasks, data]); // Update the tasks state with the new task
+            console.log('Response Data:', data);
+            const updatedTasks = [...tasks, data]
+            console.log('Updated tasks:', updatedTasks)
+            setTasks(updatedTasks); // Update the tasks state with the new task
             setFormData({ // Clear the form fields after adding the task
                 task_name: '',
                 completed: false,
