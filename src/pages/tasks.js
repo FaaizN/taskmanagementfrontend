@@ -58,7 +58,7 @@ export default function Tasks({userName}) {
         })
         .then(res => {
             if (res.ok) {
-                return res.text;
+                return res.text();
             } else {
                 throw new Error("Failed to add task. Server responded with status: " + res.status);
             }
