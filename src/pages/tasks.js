@@ -58,7 +58,7 @@ export default function Tasks({userName}) {
         })
         .then(res => {
             if (res.ok) {
-                return res.text();
+                return res.json();
             } else {
                 throw new Error("Failed to add task. Server responded with status: " + res.status);
             }
@@ -142,7 +142,6 @@ export default function Tasks({userName}) {
                 }}>    
                 {tasks.map(task=>(
                     <Paper elevation={6} style={{margin:"10px", padding:"15px", textAlign:"left"}} key={task.id}>
-                     Id:{task.task_id}<br/>
                      Name:{task.task_name}<br/>
                      Completed:{task.completed ? 'Yes':'No'}<br/>
                      Due-Date:{task.due_date}
