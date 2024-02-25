@@ -73,6 +73,8 @@ export default function Tasks({userName}) {
                 completed: false,
                 due_date: ''
             });
+
+            window.location.reload(); // Reload the page when a new task is added
         })
         /*.catch(error => {
             console.error('Error adding task:', error.message);
