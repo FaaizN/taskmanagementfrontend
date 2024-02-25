@@ -120,7 +120,7 @@ export default function Tasks({userName}) {
 
 
 
-            <Container>
+        <Container>
             {/* "Current task" section */}
             <Paper elevation={3} style={paperStyle}>
                 <h1 style={{color:'black'}}><u>Current Tasks</u></h1>
@@ -135,12 +135,7 @@ export default function Tasks({userName}) {
             <div style={{
                 display: 'block',
                 margin: 'auto'
-            }}>    
-            </div>     
-            </Box>
-            </Paper>
-            
-            <Paper elevation={3} style={paperStyle}>
+                }}>    
                 {tasks.map(task=>(
                     <Paper elevation={6} style={{margin:"10px", padding:"15px", textAlign:"left"}} key={task.id}>
                      Id:{task.task_id}<br/>
@@ -149,8 +144,11 @@ export default function Tasks({userName}) {
                      Due-Date:{task.due_date}
               
                     </Paper>
-                ))}
-            </Paper>        
-            </Container>
-        </>);
+                    ))}
+                </div>     
+            </Box>
+        </Paper>                
+    </Container>
+    </>
+    );
 }
