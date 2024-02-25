@@ -91,7 +91,8 @@ export default function Tasks({userName}) {
             <Container>
                  {/* "Add Task" section */}
                 <Paper elevation={3} style={paperStyle}>
-                        <h1 style={{color:'black'}}><u>Add Task</u></h1>
+                        <h1 style={{color:'black'}}><u>Welcome {userName}!</u></h1>
+                        <h2 style={{color:'black'}}>Add Task</h2>
                     <Box
                     component="form"
                     sx={{
