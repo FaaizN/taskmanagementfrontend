@@ -25,7 +25,7 @@ export default function Tasks({userName}) {
         .catch(error => {
             console.error('Error fetching tasks:', error);
         });
-    }, []);
+    }, [userName]);
     
 
     const handleInputChange = (e) => {
@@ -46,7 +46,7 @@ export default function Tasks({userName}) {
         const newTask = {
             task_name: formData.task_name,
             completed: formData.completed, // Assuming this is a boolean value
-            due_date: formData.due_date,
+            due_date: formattedDueDate,
         };
 
         console.log(JSON.stringify(newTask))

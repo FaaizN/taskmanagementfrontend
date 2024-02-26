@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Container, Paper, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom'
-import Tasks from '../pages/tasks';
 
 export default function LoginUser({setUserName}) {
     const paperStyle = {padding: '50px 20px', width:600, margin: '20px auto'}
@@ -20,6 +19,7 @@ export default function LoginUser({setUserName}) {
           });
 
           if (response.ok) {
+          
               setUserExists(true);
               setUserName(user_Name); // Update the userName in the parent component
               navigate('/tasks');
@@ -29,6 +29,14 @@ export default function LoginUser({setUserName}) {
           }
       } catch (error) {
           console.error("Error checking user:", error);
+      }
+
+      // Output to console if userExists
+      if (userExists) {
+        console.log("user exists");
+      }
+      else {
+        console.log("user does not exist")
       }
     }  
 
